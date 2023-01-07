@@ -54,7 +54,7 @@ const ItemPreview = (props) => {
               className="user-pic rounded-circle pr-1"
             />
           </Link>
-          { !item.seller.isVerified &&
+          { item.seller.isVerified &&
             <div className="flex-grow-1 d-flex flex-row">
             <img src="/verified_seller.svg" /><p>TOP SELLER</p>
             </div>
