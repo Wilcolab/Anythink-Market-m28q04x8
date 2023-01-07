@@ -24,7 +24,8 @@ var UserSchema = new mongoose.Schema(
     },
     isVerified: {
       type: Boolean,
-      default: false
+      default: false,
+      required: true
     },
     bio: String,
     image: String,
@@ -76,7 +77,6 @@ UserSchema.methods.toAuthJSON = function() {
   return {
     username: this.username,
     email: this.email,
-    isVerified: this.isVerified,
     token: this.generateJWT(),
     bio: this.bio,
     image: this.image,
