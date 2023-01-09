@@ -1,0 +1,5 @@
+id,last name,first name,email,price,country
+234af986-fe5c-4243-b7a3-effc2283c1f1,Christofol,Yank,ychristofol0@Amazon.com,956 China
+4cffd3c2-f513-465f-a311-8e26000586ce,Scutcheon,Benedetto,bscutcheon1@amazon.com,162	China
+0be1ddb3-1b2a-4830-b0ac-594461a6a992,Frentz,Fairlie,ffrentz2@amazon.com,701 Colombia
+d7eec670-7119-4dee-bd47-1152d44ca78f,Beddon,Ambrosius,abeddon3@businessweek.com,551	China
