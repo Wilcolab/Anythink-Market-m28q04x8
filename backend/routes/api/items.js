@@ -155,15 +155,13 @@ router.post("/", auth.required, function(req, res, next) {
       
       // generate image if not provided
 
-      if(req.body.item.image == '') {
-        const response = await openai.createImage({
-          prompt: req.body.item.title,
-          n: 1,
-          size: "256x256"
-        });
+      const response = await openai.createImage({
+        prompt: req.body.item.title,
+        n: 1,
+        size: "256x256"
+      });
 
-        req.body.item.image = response.data.data[0].url;
-      }
+      req.body.item.image = response.data.data[0].url;
 
       var item = new Item(req.body.item);
 
