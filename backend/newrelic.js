@@ -13,7 +13,6 @@ exports.config = {
    * Array of application names.
    */
   app_name: ['Anythink'],
-  license_key: process.env.INGEST_LICENSE_KEY,
   logging: {
     /**
      * Level at which to log. 'trace' is most useful to New Relic when diagnosing
