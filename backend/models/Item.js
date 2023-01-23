@@ -11,8 +11,8 @@ var ItemSchema = new mongoose.Schema(
     image: String,
     favoritesCount: { type: Number, default: 0 },
     comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
-    tagList: [{ type: String }],
-    seller: { type: mongoose.Schema.Types.ObjectId, ref: "User" }
+    tagList: [{ type: String, index: true }],
+    seller: { type: mongoose.Schema.Types.ObjectId, ref: "User", index: true }
   },
   { timestamps: true }
 );
