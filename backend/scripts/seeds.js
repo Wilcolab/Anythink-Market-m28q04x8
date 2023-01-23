@@ -41,7 +41,7 @@ const createUsers = async (numUsers) => {
     });
   }
   await User.create(users);
-}
+};
 
 const createItems = async (numItems) => {
   const items = [];
@@ -57,7 +57,7 @@ const createItems = async (numItems) => {
     });
   }
   await Item.create(items);
-}
+};
 
 const createComments = async (numComments) => {
   const comments = [];
@@ -69,7 +69,7 @@ const createComments = async (numComments) => {
     });
   }
   await Comment.create(comments);
-}
+};
 
 const seed = async () => {
   await User.deleteMany({});
@@ -90,4 +90,3 @@ seed()
     console.error(e);
     process.exit();
   });
-  
