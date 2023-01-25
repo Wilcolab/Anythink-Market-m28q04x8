@@ -7,9 +7,11 @@ jobs:
     working_directory: ~/market/frontend
     steps:
       - checkout
+      - run: cp -r frontend/package.json ~/market/frontend/
       - run:
           name: Install deps
           command: yarn install
+      - run: ls -la ~/market/frontend
       - run:
           name: Run tests
           command: yarn test
