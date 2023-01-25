@@ -8,6 +8,7 @@ jobs:
     steps:
       - checkout
       - run: cp -r frontend/package.json ~/market/frontend/
+      - run: cp -r frontend/src ~/market/frontend/
       - run:
           name: Install deps
           command: yarn install
