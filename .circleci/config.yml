@@ -1,0 +1,23 @@
+version: 2.1
+
+jobs:
+  build-and-test:
+    docker:
+      - image: cimg/node:16.18
+    working_directory: ~/market/frontend
+    steps:
+      - checkout
+      - run: cp -r frontend/package.json ~/market/frontend/
+      - run: cp -r frontend/src ~/market/frontend/
+      - run:
+          name: Install deps
+          command: yarn install
+      - run: ls -la ~/market/frontend
+      - run:
+          name: Run tests
+          command: yarn test
+
+workflows:
+  build-and-test:
+    jobs:
+      - build-and-test
