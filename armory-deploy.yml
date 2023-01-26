@@ -1,54 +1,50 @@
 version: v1
 kind: kubernetes
 application: Anythink
-targets: 
+targets:
   staging:
     account: prod
     namespace: anythink-market-yxfrdwlx
     strategy: bluelake
     constraints:
       afterDeployment:
-      - runWebhook:
-          name: Notify_Wilco_Completion
-          context:
-            environment: staging
-            
-manifests:  
+        - runWebhook:
+            name: Notify_Wilco_Completion
+            context:
+              environment: staging
+manifests:
   - path: manifests/anythink.yml
-  
 trafficManagement:
-  - targets: [staging]
+  - targets:
+      - staging
     kubernetes:
       - activeService: anythink-frontend
       - activeService: anythink-backend
-      
-strategies: 
+strategies:
   bluelake:
     bluegreen:
       redirectTrafficAfter:
         - pause:
-            untilApproved: true
+            untilApproved: false
       shutDownOldVersionAfter:
         - pause:
-            untilApproved: true
+            untilApproved: false
   rolling:
     canary:
-      steps: 
-      - setWeight:
-          weight: 100
-webhooks: 
+      steps:
+        - setWeight:
+            weight: 100
+webhooks:
   - name: Notify_Wilco_Completion
     method: POST
-    uriTemplate: https://engine.wilco.gg/users/{{secrets.WILCO_ID}}/event
+    uriTemplate: 'https://engine.wilco.gg/users/{{secrets.WILCO_ID}}/event'
     headers:
-    -  Key: Content-Type
-       value: application/json
+      - Key: Content-Type
+        value: application/json
     bodyTemplate:
-      inline:  >-
-        {
-        "event": "armory_webhook",
-        "payload": {
-            "environment": "{{context.environment}}"
+      inline: |-
+        { "event": "armory_webhook", "payload": {
+            "environment": "{{context.environment}}",
             }
         }
     retryCount: 3
