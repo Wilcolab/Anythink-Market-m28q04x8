@@ -1,1 +1,0 @@
-UPDATE users SET nickname = 'no_nickname' WHERE nickname IS NULL;

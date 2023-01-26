@@ -1,1 +1,0 @@
-ALTER TABLE users ADD COLUMN nickname VARCHAR(20) NULL;
