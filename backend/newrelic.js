@@ -25,7 +25,8 @@ exports.config = {
       /**
        * Toggles whether the agent gathers log records for sending to New Relic.
        */
-      enabled: true
+      enabled: true,
+      max_samples_stored: 10000
     }
   },
   attributes: {
