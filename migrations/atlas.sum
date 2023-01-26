@@ -1,4 +1,5 @@
-h1:pWXVGQI01rQl0bNKFloMDT+f36iZFTaYaV8slmV8PQA=
+h1:u42hDkqIOv59TF3jpJ/i1tigzjDvBYumNhGrV2j+Gzw=
 1_init.sql h1:20DJEdxGH76vAd08bKTyNH2oEUEGcZ0SLn+Zr+LFz/w=
 20230126062701_add_nickname_to_users.sql h1:rUREZ6arfhsTMK5d1ITQ9JAVsUw9O6jeN+E03pJBeLU=
 20230126064153_make_nickname_not_null.sql h1:IdLc62jw+ZezADGqnKskMNrnEpT7QIguys/lgYhls9g=
+20230126065204_fill_nickname.sql h1:vZEnjbDRUMB/ppoBO3I9XnQXEN6m/5lJg52PgeL/HIU=
