@@ -12,6 +12,6 @@ if [ ! -f "$file" ]; then
     exit 1
 fi
 
-tar -czvf "/backup.tar.gz" "$file"
+tar -czvf "../backup.tar.gz" "$file"
 
 echo "Archiving complete: /backup.tar.gz"
